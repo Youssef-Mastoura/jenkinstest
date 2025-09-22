@@ -2,7 +2,7 @@ pipeline {
     agent any  // Run on any available Jenkins agent
 
     environment {
-        MVN_HOME = "/usr/share/maven" // Adjust to your Maven installation path
+        MVN_HOME = "/usr/bin" // Updated Maven path
     }
 
     stages {
@@ -15,21 +15,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the Spring Boot project...'
-                sh "${MVN_HOME}/bin/mvn clean compile"
+                sh "${MVN_HOME}/mvn clean compile"
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running unit tests...'
-                sh "${MVN_HOME}/bin/mvn test"
+                sh "${MVN_HOME}/mvn test"
             }
         }
 
         stage('Package') {
             steps {
                 echo 'Packaging the application...'
-                sh "${MVN_HOME}/bin/mvn package"
+                sh "${MVN_HOME}/mvn package"
             }
         }
 
