@@ -1,8 +1,8 @@
 pipeline {
-    agent any  // Run on any available Jenkins agent
+    agent any  
 
     environment {
-        MVN_HOME = "/usr/bin" // Updated Maven path
+        MVN_HOME = "/usr/bin" 
     }
 
     stages {
